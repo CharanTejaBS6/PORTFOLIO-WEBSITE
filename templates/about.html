@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+      .navbar {
+        background-color: #f8f9fa;
+      }
+
+      .nav-link:hover {
+        border-radius: 10px;
+        box-shadow: rgb(0, 102, 255) 0px 0px 6px;
+        border-style: groove;
+        background-color: rgba(186, 223, 254, 0.452);
+        transition: box-shadow 0.5s ease-out;
+      }
+
+      .nav-link {
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+
+      /* Custom CSS for About Me section */
+      .about-me-container {
+        border: 2px solid rgba(0, 162, 255, 0.332); /* Adjust border style and color */
+        border-radius: 20px;
+        border-style: double;
+        box-shadow: 0 0 10px rgba(58, 163, 255, 0.331); /* Adjust box shadow */
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto; /* Enable vertical scrollbar */
+        max-height: 70vh; /* Set max height and allow vertical scrolling */
+      }
+
+      .about-me-container::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+      }
+
+      .about-me-container::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0); /* Color of the scrollbar thumb */
+        border-radius: 15px; /* Border radius of the scrollbar thumb */
+      }
+
+      .about-me-container::-webkit-scrollbar-track {
+        background-color: transparent; /* Color of the scrollbar track */
+      }
+
+      .about-me-container:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1); /* Change thumb color on hover */
+      }
+
+      .about-me-container:hover::-webkit-scrollbar {
+        width: 16px; /* Increase scrollbar width on hover */
+      }
+
+      .about-me-container .amt {
+        border-radius: 10px;
+        background-color: rgb(163, 195, 255);
+        margin-left: 35%;
+        padding-bottom: 3px;
+        border-bottom: rgba(0, 0, 0, 0.6) solid 1px;
+        position: fixed;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .about-me-container h2 {
+        font-size: 20px;
+        margin-top: 20px;
+        color: #555;
+      }
+
+      .about-me-container p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+      }
+      @media (max-width: 991px) {
+        .navbar-nav {
+          margin-left: auto;
+        }
+      }
+      @media (max-width: 767px) {
+        .nav-link:hover {
+          color: initial;
+          background-color: initial;
+          border-radius: initial;
+          box-shadow: none;
+          border-style: initial;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="{% url 'index' %}"
+          style="
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+              'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            color: cornflowerblue;
+            text-shadow: rgb(120, 119, 119) 0px 0px 1px;
+            font-size: 30px;
+          "
+          >Cherry</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'index' %}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'skills' %}">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'achievements' %}"
+                >Achievements</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav" style="padding-right: 40px">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'send_email' %}">Mail 📧</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="about-me-container">
+      <div class="amt">
+        <h1>&nbsp;About Me&nbsp;</h1>
+      </div>
+      <br />
+      <br />
+      <h2>Basic Details</h2>
+      <p>Name: Charan Teja B S</p>
+      <p>Date of Birth: January 14, 2005</p>
+      <p>Gender: Male</p>
+
+      <h2>Education</h2>
+      <p>
+        Bachelor of Technology in Computer Science - University of Visvesvaraya
+        College of Engineering, 2022-2026
+      </p>
+
+      <h2>Interests</h2>
+      <p>
+        Python Programming, Data Science, Web Development, Artificial
+        Inteligence
+      </p>
+
+      <h2>Hobbies</h2>
+      <p>Singing, Dancing, Art and Craft</p>
+
+      <h2>Current Address</h2>
+      <p>UVCE Boys Hostel , Ambedkar Veedhi , Bangalore - 560001</p>
+
+      <h2>Resume Link</h2>
+      <a
+        href="https://drive.google.com/file/d/1M8e9AwUeFNGSrkrAJyJzUUKbRniXVZa1/view?usp=sharing"
+        style="text-decoration: none"
+        >👉My Resume👈</a
+      >
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
