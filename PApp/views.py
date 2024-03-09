@@ -15,8 +15,7 @@ def send_email(request):
         message = request.POST.get('body')
 
         recipient_email = "charantej6ms@gmail.com"
-        gmail_url = f"https://mail.google.com/mail/u/0/?view=cm&fs=1&to={
-            recipient_email}&su={subject}&body={message}"
+        gmail_url = f"https://mail.google.com/mail/u/0/?view=cm&fs=1&to={recipient_email}&su={subject}&body={message}"
 
         return redirect(gmail_url)
     elif request.method == 'GET':
